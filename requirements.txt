@@ -1,0 +1,11 @@
+absl-py
+datasets
+nltk
+py7zr
+rouge_score
+torch
+transformers
+transformers[torch]
+tqdm
+
+#pip install --no-cache-dir transformers sentencepiece
