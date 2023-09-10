@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 
 import pandas as pd
+from rich import print
 from tqdm import tqdm
 
 from datasets import load_metric
@@ -57,7 +58,8 @@ class SequenceSummarizerTrainer(SequenceToSequence):
         rouge_dict = dict((rn, score[rn].mid.fmeasure) for rn in rouge_names)
         metrics = pd.DataFrame(rouge_dict, index=["pegasus"])
         metrics.to_csv(self.model_output+"/metrics.csv", index = False)
-        
+        print("[italic green]Model trained succesfully![/italic green]", locals())
+
 
     def evaluate_summaries_pegasus(self, dataset, metric, model, tokenizer,
                                 batch_size=16, column_text="article",column_summary="highlights"):
