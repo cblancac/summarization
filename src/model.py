@@ -60,8 +60,8 @@ class SequenceSummarizerTrainer(SequenceToSequence):
 
     def evaluate_summaries_pegasus(self, dataset, metric, model, tokenizer,
                                 batch_size=16, column_text="article",column_summary="highlights"):
-        article_batches = list(self.chunks(dataset[column_text], batch_size))
-        target_batches = list(self.chunks(dataset[column_summary], batch_size))
+        article_batches = list(self._chunks(dataset[column_text], batch_size))
+        target_batches = list(self._chunks(dataset[column_summary], batch_size))
 
         for article_batch, target_batch in tqdm(
             zip(article_batches, target_batches), total=len(article_batches)):
