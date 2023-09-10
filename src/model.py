@@ -56,7 +56,7 @@ class SequenceSummarizerTrainer(SequenceToSequence):
         rouge_names = ["rouge1", "rouge2", "rougeL", "rougeLsum"]
         rouge_dict = dict((rn, score[rn].mid.fmeasure) for rn in rouge_names)
         metrics = pd.DataFrame(rouge_dict, index=["pegasus"])
-        metrics.to_csv(self.model_output, index = False)
+        metrics.to_csv(self.model_output+"metrics.csv", index = False)
 
     def evaluate_summaries_pegasus(self, dataset, metric, model, tokenizer,
                                 batch_size=16, column_text="article",column_summary="highlights"):

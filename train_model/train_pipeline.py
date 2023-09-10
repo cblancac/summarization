@@ -5,8 +5,12 @@ from src.dataset import FormatDataset
 from src.model import SequenceSummarizerTrainer
 
 
+DATASET_PATH = "samsum"
+MODEL_CKPT = "google/pegasus-cnn_dailymail"
+MODEL_OUTPUT = "pegasus-finetuned"
+
 training_args = TrainingArguments(
-    output_dir="pegasus-samsum",
+    output_dir=MODEL_OUTPUT,
     num_train_epochs=1,
     warmup_steps=500,
     per_device_train_batch_size=1,
@@ -19,10 +23,6 @@ training_args = TrainingArguments(
     save_steps=1e6,
     gradient_accumulation_steps=16,
 )
-
-DATASET_PATH = "samsum"
-MODEL_CKPT = "google/pegasus-cnn_dailymail"
-MODEL_OUTPUT = "pegasus-finetuned"
 
 
 def train_pipeline():
