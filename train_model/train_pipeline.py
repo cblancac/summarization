@@ -27,9 +27,6 @@ training_args = TrainingArguments(
 
 def train_pipeline():
     data = load_dataset(DATASET_PATH)
-    data["train"] = data["train"].shuffle(seed=42).select(range(10))
-    data["test"] = data["test"].shuffle(seed=42).select(range(2))
-    data["validation"] = data["validation"].shuffle(seed=42).select(range(2))
 
     dataset = FormatDataset(data, MODEL_CKPT)
     dataset_tokenized = dataset.get_tokenized_dataset()
