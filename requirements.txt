@@ -2,6 +2,7 @@ absl-py
 datasets
 nltk
 py7zr
+rich
 rouge_score
 torch
 transformers
