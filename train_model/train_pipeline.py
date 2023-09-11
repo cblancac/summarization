@@ -21,7 +21,7 @@ training_args = TrainingArguments(
     evaluation_strategy="steps",
     eval_steps=500,
     save_steps=1e6,
-    gradient_accumulation_steps=16,
+    gradient_accumulation_steps=8,
 )
 
 
