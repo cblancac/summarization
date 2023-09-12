@@ -1,6 +1,7 @@
 absl-py
 datasets
 nltk
+protobuf
 py7zr
 rich
 rouge_score
