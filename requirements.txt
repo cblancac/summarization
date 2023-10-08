@@ -9,5 +9,3 @@ torch
 transformers
 transformers[torch]
 tqdm
-
-#pip install --no-cache-dir transformers sentencepiece
